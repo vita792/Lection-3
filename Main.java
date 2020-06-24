@@ -1,33 +1,40 @@
-package com.company.lesson6;
+package com.company.lesson2;
 
-import java.util.Scanner;
+        import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Enter some number: ");
+
+        int[] userNumbers = new int[3];
+        System.out.println("Enter three numbers: ");
         Scanner numb = new Scanner(System.in);
-        int count = numb.nextInt();
-        if (count == 1) {
-            System.out.println("#");
-        } else if (count == 2) {
-            System.out.println("#\n##");
-        } else if (count == 3) {
-            System.out.println("#\n##\n###");
-        } else if (count == 4) {
-            System.out.println("#\n##\n###\n####");
-        } else if (count == 5) {
-            System.out.println("#\n##\n###\n####\n#####\n#####");
-        } else if (count == 6) {
-            System.out.println("#\n##\n###\n####\n#####\n######\n######");
-        } else if (count == 7) {
-            System.out.println("#\n##\n###\n####\n#####\n######\n#######");
-        } else if (count == 8) {
-            System.out.println("#\n##\n###\n####\n#####\n######\n#######\n########");
-        } else if (count == 9) {
-            System.out.println("#\n##\n###\n####\n#####\n######\n#######\n########\n##########");
+        for (int i =0; i < userNumbers.length; i++) {
+            userNumbers[i] = numb.nextInt();
+        }
+        if        (userNumbers[0]%2 != 0 && userNumbers[1]%2 != 0  && userNumbers[2]%2 != 0) {
+            System.out.println("Your summ is: " + (userNumbers[0] + userNumbers[1] + userNumbers[2]));
+
+        } else if (userNumbers[0]%2 == 0 && userNumbers[1]%2 != 0  && userNumbers[2]%2 != 0) {
+            System.out.println("Your summ is: " + (userNumbers[1] + userNumbers[2]));
+
+        } else if (userNumbers[0]%2 == 0 && userNumbers[1]%2 == 0 && userNumbers[2]%2 != 0) {
+            System.out.println("Your summ is: " + (userNumbers[2]));
+
+        } else if (userNumbers[0]%2 == 0 && userNumbers[1]%2 != 0 && userNumbers[2]%2 == 0) {
+            System.out.println("Your summ is: " + (userNumbers[1]));
+
+        } else if (userNumbers[0]%2 != 0 && userNumbers[1]%2 == 0 && userNumbers[2]%2 != 0) {
+            System.out.println("Your summ is: " + (userNumbers[0] + userNumbers[2]));
+
+        } else if (userNumbers[0]%2 != 0 && userNumbers[1]%2 == 0 && userNumbers[2]%2 == 0) {
+            System.out.println("Your summ is: " + (userNumbers[0]));
+
+        } else if (userNumbers[0]%2 != 0 && userNumbers[1]%2 != 0  && userNumbers[2]%2 == 0) {
+            System.out.println("Your summ is: " + (userNumbers[0] + userNumbers[1]));
+
         } else {
-            System.out.println("Please, enter number from 1 to 9!");
+            System.out.println("There are no odd numbers!" );
         }
     }
 }
